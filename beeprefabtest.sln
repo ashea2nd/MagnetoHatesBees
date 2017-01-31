@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{EC1B867E-9F61-53E0-56E6-6D0CE4C07387}") = "beeprefabtest", "Assembly-CSharp.csproj", "{12544A33-5F00-01F0-F23F-8A0F5B6E0496}"
+EndProject
+Project("{EC1B867E-9F61-53E0-56E6-6D0CE4C07387}") = "beeprefabtest", "Assembly-CSharp-Editor.csproj", "{7C4B04C8-6B3F-8D71-41BB-19BB57DBC717}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12544A33-5F00-01F0-F23F-8A0F5B6E0496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12544A33-5F00-01F0-F23F-8A0F5B6E0496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12544A33-5F00-01F0-F23F-8A0F5B6E0496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12544A33-5F00-01F0-F23F-8A0F5B6E0496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C4B04C8-6B3F-8D71-41BB-19BB57DBC717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C4B04C8-6B3F-8D71-41BB-19BB57DBC717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C4B04C8-6B3F-8D71-41BB-19BB57DBC717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C4B04C8-6B3F-8D71-41BB-19BB57DBC717}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

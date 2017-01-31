@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{7A25F428-CF08-CB99-4DDA-1A418CAD9AB6}") = "Bee-Pan-Merge-master", "Assembly-CSharp.csproj", "{29541DE0-BE47-A866-82C1-0AC4DF56FB42}"
+EndProject
+Project("{7A25F428-CF08-CB99-4DDA-1A418CAD9AB6}") = "Bee-Pan-Merge-master", "Assembly-CSharp-Editor.csproj", "{FC1D8C7A-B9B6-B2F5-895E-8EF3A4010AD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29541DE0-BE47-A866-82C1-0AC4DF56FB42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29541DE0-BE47-A866-82C1-0AC4DF56FB42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29541DE0-BE47-A866-82C1-0AC4DF56FB42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29541DE0-BE47-A866-82C1-0AC4DF56FB42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC1D8C7A-B9B6-B2F5-895E-8EF3A4010AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC1D8C7A-B9B6-B2F5-895E-8EF3A4010AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC1D8C7A-B9B6-B2F5-895E-8EF3A4010AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC1D8C7A-B9B6-B2F5-895E-8EF3A4010AD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
