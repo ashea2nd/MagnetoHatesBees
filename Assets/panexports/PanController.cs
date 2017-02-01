@@ -9,7 +9,7 @@ public class PanController : MonoBehaviour {
 	public PlayerBehavior playerScript;
 	public GameObject panBase; 
 	public AudioClip hitSound;
-	private int x = 0;
+	//private int x = 0;
 	private Vector3 currentAccel = GvrController.Accel;
 	private Vector3 lastAccel = GvrController.Accel;
 
@@ -46,7 +46,7 @@ public class PanController : MonoBehaviour {
 				if (Mathf.Abs (lastAccel.z - currentAccel.z) > 1.0f) {
 					if (!alreadyMade) {
 						alreadyMade = true;
-						GameObject pan = GameObject.Instantiate (panBase, beePosition + new Vector3 (0, 0.5f, -6.5f), Quaternion.Euler (0, 0, 0)) as GameObject;
+						GameObject pan = GameObject.Instantiate (panBase, beePosition + new Vector3 (0, 0f, -6.5f), Quaternion.Euler (0, 0, 0)) as GameObject;
 						//x += 10;
 						StartCoroutine(swatBee (pan, beeObject));
 					}
@@ -77,8 +77,8 @@ public class PanController : MonoBehaviour {
 		pan.transform.GetChild(0).gameObject.GetComponent<Animator>().Play("SwatPan");
 		AudioSource.PlayClipAtPoint (hitSound, transform.position);
 		bee.GetComponent<BeeBehavior1> ().shooted = true;
-		yield return new WaitForSeconds(0.5f);
-		bee.SetActive (false);
+		yield return new WaitForSeconds(0.3f);
+		//bee.SetActive (false);
 		yield return new WaitForSeconds (0.1f);
 		pan.SetActive (false);
 		alreadyMade = false;

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehavior : MonoBehaviour {
 
@@ -11,7 +12,7 @@ public class PlayerBehavior : MonoBehaviour {
 	//private bool beastMode = false;
 	//private bool transiteComplete = false;
 	public int playerState = 0; //0:normal,1:charged 2: transit to beast mode, 3:beastmode, 4:transit back to normal
-	public int numberOfBees = 5;
+	public int numberOfBees = 4;
 	public AudioClip stingerStopSound;
 	public AudioClip winningSound;
 	public SoundControl soundScript;
@@ -47,8 +48,7 @@ public class PlayerBehavior : MonoBehaviour {
 			}
 		}
 		if (numberOfBees == 0) {
-			GetComponent<AudioSource> ().Stop ();
-			AudioSource.PlayClipAtPoint (winningSound, transform.position);
+			SceneManager.LoadScene ("TutorialScene");
 		}
 	}
 	public void stingerStopSoundPlay(){

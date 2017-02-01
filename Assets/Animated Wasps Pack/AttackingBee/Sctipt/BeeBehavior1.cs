@@ -5,6 +5,7 @@ using System.Collections;
 
 public class BeeBehavior1 : MonoBehaviour {
 
+	public GameObject hitParticle;
 	public GameObject stinger;
 	public float speed;
 	public Animator anim;
@@ -59,6 +60,7 @@ public class BeeBehavior1 : MonoBehaviour {
 			stingerShooted = false;
 
 		}else{
+			hitParticle.SetActive (true);
 			anim.Play("Death1");
 			StartCoroutine ("KillBee");
 			if (dead)

@@ -36,10 +36,12 @@ public class GvrLaserPointer : GvrBasePointer {
   private bool isPointerIntersecting;
   private Vector3 pointerIntersection;
   private Ray pointerIntersectionRay;
-
+	public Material redMaterial;
+	public Material whiteMaterial;
+	//private bool wantRedMaterial = false;
   /// Color of the laser pointer including alpha transparency
   public Color laserColor = new Color(1.0f, 1.0f, 1.0f, 0.25f);
-
+	
   /// Maximum distance of the pointer (meters).
   [Range(0.0f, 10.0f)]
   public float maxLaserDistance = 0.75f;
@@ -62,7 +64,9 @@ public class GvrLaserPointer : GvrBasePointer {
         Vector3 clampedDifference = Vector3.ClampMagnitude(difference, maxReticleDistance);
         Vector3 clampedPosition = pointerIntersectionRay.origin + clampedDifference;
         reticle.transform.position = clampedPosition;
+				//reticle.GetComponent<MeshRenderer> ().material = redMaterial; 
       } else {
+				reticle.GetComponent<MeshRenderer> ().material = whiteMaterial;
         reticle.transform.localPosition = new Vector3(0, 0, maxReticleDistance);
       }
 
@@ -98,6 +102,11 @@ public class GvrLaserPointer : GvrBasePointer {
 
   public override void OnPointerEnter(GameObject targetObject, Vector3 intersectionPosition,
       Ray intersectionRay, bool isInteractive) {
+		if (targetObject.CompareTag ("Stinger") == true || targetObject.CompareTag ("button") == true || targetObject.CompareTag ("Bee") == true) {
+			reticle.GetComponent<MeshRenderer> ().material = redMaterial; 
+		} else {
+			reticle.GetComponent<MeshRenderer> ().material = whiteMaterial; 
+		}
     pointerIntersection = intersectionPosition;
     pointerIntersectionRay = intersectionRay;
     isPointerIntersecting = true;
@@ -113,6 +122,7 @@ public class GvrLaserPointer : GvrBasePointer {
     pointerIntersection = Vector3.zero;
     pointerIntersectionRay = new Ray();
     isPointerIntersecting = false;
+		reticle.GetComponent<MeshRenderer> ().material = whiteMaterial; 
   }
 
   public override void OnPointerClickDown() {

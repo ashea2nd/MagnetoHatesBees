@@ -27,6 +27,8 @@ public class StingerBehavior : MonoBehaviour {
 	public AudioClip stopSound;
 	public AudioClip comingSound;
 	public AudioClip shootingSound;
+	public Shader glow;
+	private Shader normal;
 	private AudioSource audio;
 	//private Rigidbody rb;
 	//private GameObject controllerPointer;
@@ -36,6 +38,7 @@ public class StingerBehavior : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//rb = GetComponent<Rigidbody>();
+		normal = GetComponent<Renderer>().material.shader;
 		audio = GetComponent<AudioSource>();
 		audio.loop = true;
 		audio.clip = windSound;
@@ -61,6 +64,7 @@ public class StingerBehavior : MonoBehaviour {
 			}
 			if (stingerState == 1) {
 				stoppingUpdate ();
+				GlowThis ();
 			}
 			if (stingerState == 2) {
 				gettingUpdate ();
@@ -106,9 +110,11 @@ public class StingerBehavior : MonoBehaviour {
 		if (GvrController.Gyro[0] > 0.5){
 			stingerState = 2;
 			AudioSource.PlayClipAtPoint (comingSound, transform.position);
+			transform.Rotate (0f, 180f, 0f);
 		}
 				if (Input.GetKeyDown("2")){
 					stingerState = 2;
+					transform.Rotate (0f, 180f, 0f);
 				}
 	}
 
@@ -164,11 +170,21 @@ public class StingerBehavior : MonoBehaviour {
 	public void ShootingStinger(){
 		if (stingerState == 1) {
 			stingerState = 0;
-		} else {
+		} else if (stingerState != 3) {
+			stingerState = 0;
+		}else{
 			shootingDestination = 5*pointer.transform.position-4*transform.position;
 			stingerState = 4;
 			AudioSource.PlayClipAtPoint (shootingSound, transform.position);
 		}
+	}
+
+	public void GlowThis(){
+		GetComponent<Renderer>().material.shader = glow;
+	}
+
+	public void stopGlowing(){
+		GetComponent<Renderer>().material.shader = normal;
 	}
 
 	void OnTriggerEnter(Collider other) 
@@ -190,7 +206,7 @@ public class StingerBehavior : MonoBehaviour {
 			print ("Stinger collide");
 			StingerBehavior stingerScript = other.GetComponent<StingerBehavior> ();
 			stingerScript.stingerState = 5;
-			healthscript.increaseEnergy (10.0f);
+			healthscript.increaseEnergy (20.0f);
 		}
 	}
 		
