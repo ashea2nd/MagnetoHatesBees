@@ -6,4 +6,6 @@ You, Magneto, were out on a picnic when you were suddenly shrunk down to the siz
 
 Quick Video Demonstration: https://youtu.be/6s3QoM4t3r8
 
-To playtest on Google Pixel, run the .apk file. 
+To playtest on Google Pixel, run the .apk file.
+
+This project was made over the course of 2 weeks in a hackathon-esque fashion. Please excuse any sloppy code. 
