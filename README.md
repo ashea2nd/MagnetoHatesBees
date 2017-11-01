@@ -1,6 +1,6 @@
 # MagnetoHatesBees
 
-Final Project placed 4th out of ~15 in MIT's first VR class competition. Equipment was returned at the end of the class, so only short demo clip is available. Built for the Google Daydream.
+Final Project placed 4th out of ~15 in MIT's inaugural VR class competition. Equipment was returned at the end of the class, so only short demo clip is available. Built for the Google Daydream.
 
 You, Magneto, were out on a picnic when you were suddenly shrunk down to the size of an apple! Now a swarm of mutant bees has come and wants to steal your food. Use your power to fend off the bees and their metal stingers so you can enjoy your picnic!  
 
