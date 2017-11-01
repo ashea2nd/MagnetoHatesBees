@@ -1,4 +1,4 @@
-# MagnetoHatesBees
+# Magneto Hates Bees
 
 Placed 4th out of 15 in MIT's inaugural VR class competition. Built using Google Daydream. 
 
